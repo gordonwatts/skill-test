@@ -7,6 +7,12 @@ Tools are C++ objects used by the framework that is actually extracting the data
 
 These are defined in the `xaod_hints` module if you need to define special tools from user instructions. In many cases you find tool helpers. Examples below show you how to use these functions.
 
+Whenever you use these tool helpers, copy `xaod_hints.py` from the skill assets into the user's package source directory so imports work:
+
+```bash
+cp /home/gwatts/code/llm/skill-test/.codex/skills/servicex/assets/xaod_hints.py /path/to/your/package/
+```
+
 ## BTaggingSelectionTool: getting jet b-tagging results
 
 The `BTaggingSelectionTool` tool gets either a tag weight/discriminant for b-or-charm tagging or a tagged/not-tagged result for a working point. The working points are provided by the FTAG group in ATLAS.
