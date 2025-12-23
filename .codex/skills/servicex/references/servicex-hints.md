@@ -80,6 +80,28 @@ all_jet_pts_delivered = deliver(
 - Use `dataset.Rucio` for a `rucio` dataset, use `dataset.FileList` for a list of web accessible datasets (via `https` or `xrootd://`)
 - Only call deliver once - make sure all the data you want is in the query, even if multiple samples - just add more to the `Sample` array.
 
+There are two ways to access the output of the `deliver` function.
+
+1. If the output is small enough you expect to be able to run in-memory. For quick studies, etc., this works very well and is quite easy.
+
+  a. Make sure the `servicex_analysis_utilities` package is included in the project's dependencies.
+  b. The following code will turn the output above into a single awkward array:
+
+  ```python
+  from servicex_analysis_utils import to_awk
+
+  all_jets_pts_awk = to_awk(all_jet_pts_delivered)
+  jet_pts = all_jets_pts_awk["jet_pt_fetch"]
+  ```
+
+1. Use the ROOT files directly. These can be used with RDataFrame or `uproot`. If you have to deal with a very large amount of data that won't fit in memory, this is the proper approach.
+
+    a. The following code gets a list of all the ROOT files (if `NFiles==1` then there will be only one).
+
+    ```python
+    file_list = [str(p) for p in all_jet_pts_delivered['jet_pt_fetch']
+    ```
+
 ## Base Query
 
 Queries have to start from a base, like `FuncADLQueryPHYSLITE`.
