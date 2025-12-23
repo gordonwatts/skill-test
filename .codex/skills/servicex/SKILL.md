@@ -22,6 +22,7 @@ Provide concise, correct func_adl query patterns for ServiceX on ATLAS xAOD, wit
    - Convert units to standard LHC units (GeV, meters, etc.).
    - Never return a nested dictionary.
 5. Use `deliver` once with `NFiles=1` and appropriate dataset source.
+6. Make sure that the layout of the data that will be returned is remembered - downstream tasks that want to work with the data will need to understand it.
 
 ## Core Rules
 
