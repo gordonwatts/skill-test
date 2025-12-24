@@ -1,6 +1,6 @@
 #!/usr/bin/env -S uv run --script
-# /// script
 # NOTE: Be careful editing this block; requires-python and dependencies control uv/PEP 723 execution.
+# /// script
 # requires-python = ">=3.13"
 # dependencies = [
 #   "typer>=0.12",
