@@ -20,6 +20,18 @@ $skill-installer please list the skills at <https://github.com/gordonwatts/skill
 
 And given the list, add "all of them". Once done you'll have to exit and restart codex. Entering `$` in the terminal will show everything. You can tne try out the below prompt.
 
+### claude
+
+The installation process isn't automated (but probably could be using the `skill-installer` skill!). In the meantime:
+
+```bash
+git clone https://github.com/gordonwatts/skill-test.git /tmp/skills
+mkdir -p ~/.claude/skills
+cp -R /tmp/skills/.codex/skills/* ~/.claude/skills
+```
+
+Start up `claude` and us the `/skills` command to make sure they all showed up.
+
 ### Sample Prompt
 
 This prompt works well:
