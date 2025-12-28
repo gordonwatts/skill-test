@@ -34,10 +34,16 @@ Start up `claude` and us the `/skills` command to make sure they all showed up.
 
 ### Sample Prompt
 
-This prompt works well:
+This prompt works well to get a parquet file.
 
 ```text
-I'd like to create a stand-along script called `atlas-trigger.py` that takes one argument, `<dataset>`. The script will use servicex to get the jet pT's for that rucio dataset and save them to a parquet file called "<dataset>_jetpt.partquet" in the current working directory. Once you have the code, please run it against the dataset "mc23_13p6TeV:mc23_13p6TeV.801167.Py8EG_A14NNPDF23LO_jj_JZ2.deriv.DAOD_PHYSLITE.e8514_e8528_a9 11_s4114_r15224_r15225_p6697" to fix any bugs.
+I'd like to create a stand-alone script called `atlas-jetpt.py` that takes one argument, `<dataset>`. The script will use servicex to get the jet pT's for that rucio dataset and save them to a parquet file called "<dataset>_jetpt.parquet" in the current working directory. Once you have the code, please run it against the dataset "mc23_13p6TeV:mc23_13p6TeV.801167.Py8EG_A14NNPDF23LO_jj_JZ2.deriv.DAOD_PHYSLITE.e8514_e8528_a911_s4114_r15224_r15225_p6697" to fix any bugs.
+```
+
+This prompt works well to get a png file of a plot.
+
+```text
+I'd like to create a stand-alone script called `atlas-jetpt-plot.py` that takes one argument, `<dataset>`. The script will use servicex to plot the jet pT's for that rucio dataset and save them to a png file called "<dataset>_jetpt.png" in the current working directory. Once you have the code, please run it against the dataset "mc23_13p6TeV:mc23_13p6TeV.801167.Py8EG_A14NNPDF23LO_jj_JZ2.deriv.DAOD_PHYSLITE.e8514_e8528_a911_s4114_r15224_r15225_p6697" to fix any bugs.
 ```
 
 While you can mention skills individually, and explicitly, for this example so few skills were installed it made no difference.

@@ -130,3 +130,5 @@ dmypy.json
 *~
 .DS_Store
 *.parquet
+*.png
+scripts/init_skill.py
