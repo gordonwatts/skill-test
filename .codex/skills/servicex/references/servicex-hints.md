@@ -72,10 +72,11 @@ all_jet_pts_delivered = deliver(
 ```
 
 - `all_jet_pts_delivered` is a dictionary indexed by sample name. It contains a list of paths to ROOT files (in the form of a `GuardList`). For `NFiles=1`, there will be only a single file.
+  - If it makes sense in the code, add a command line option, or a default option to the function you are working on to change NFiles (e.g. `--n-files` with alias `-n`). It should default to 1, and `None` would be all files in the dataset. For the command line, `0` would represent all files. The user may already have some code that deals with this - in which case use that infrastructure.
 
 ## The `deliver` function
 
-- Always use `NFiles=1` as above, even if the user asks otherwise. If they do, tell them they can run it themselves when they are ready! More files and it takes to long!
+- Default to `NFiles=1` because large datasets can take a lot of time. While adding a command line option to change it is fine, defaulting to the full dataset is not - until the user has done sufficient testing.
 - The query can be re-used.
 - Use `dataset.Rucio` for a `rucio` dataset, use `dataset.FileList` for a list of web accessible datasets (via `https` or `xrootd://`)
 - Only call deliver once - make sure all the data you want is in the query, even if multiple samples - just add more to the `Sample` array.
