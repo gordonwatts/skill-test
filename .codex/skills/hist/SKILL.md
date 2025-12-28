@@ -7,7 +7,7 @@ description: Use when working with the scikit-hep hist library in Python to crea
 
 ## Overview
 
-Use this skill to build and manipulate hist.Hist objects, choose axis/storage types, fill with data and weights, and produce publication-style plots with mplhep/matplotlib.
+Use this skill to build and manipulate hist.Hist objects, choose axis/storage types, fill with data and weights, and produce publication-style plots with mplhep styles, all based on matplotlib.
 
 ## Quick start
 
