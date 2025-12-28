@@ -20,7 +20,7 @@ Create a single-file Python script that runs via `uv run --script`, declares dep
 5. Ensure the shebang is the very first line: `#!/usr/bin/env -S uv run --script`.
 6. Update the Typer command help string to describe what the script does.
 7. Mark the script executable after writing it (e.g., `chmod +x <script>`).
-8. Provide run instructions (`./script.py` or `uv run --script script.py`).
+8. Provide run instructions (`uv run --script script.py`).
 
 ## Requirements
 
