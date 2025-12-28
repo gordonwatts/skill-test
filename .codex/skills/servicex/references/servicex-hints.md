@@ -72,10 +72,11 @@ all_jet_pts_delivered = deliver(
 ```
 
 - `all_jet_pts_delivered` is a dictionary indexed by sample name. It contains a list of paths to ROOT files (in the form of a `GuardList`). For `NFiles=1`, there will be only a single file.
+  - If it makes sense in the code, add a command line option, or a default option to the function you are working on to change NFiles (e.g. `--n-files` with alias `-n`). It should default to 1, and `None` would be all files in the dataset. For the command line, `0` would represent all files. The user may already have some code that deals with this - in which case use that infrastructure.
 
 ## The `deliver` function
 
-- Always use `NFiles=1` as above, even if the user asks otherwise. If they do, tell them they can run it themselves when they are ready! More files and it takes to long!
+- Default to `NFiles=1` because large datasets can take a lot of time. While adding a command line option to change it is fine, defaulting to the full dataset is not - until the user has done sufficient testing.
 - The query can be re-used.
 - Use `dataset.Rucio` for a `rucio` dataset, use `dataset.FileList` for a list of web accessible datasets (via `https` or `xrootd://`)
 - Only call deliver once - make sure all the data you want is in the query, even if multiple samples - just add more to the `Sample` array.
@@ -159,6 +160,6 @@ Note:
 
 ## Errors
 
-If you encounter an error after running, there are two types. The first give you type errors, and those you can solve just by reading the error message carefully and perhaps not doing whatever the code complained about. You might have to look carefully for this message - for example "Method <xx> not found on object."
+If you encounter an error after running, there are two types. The first give you type errors, and those you can solve just by reading the error message carefully and perhaps not doing whatever the code complained about. You might have to look carefully for this message - for example "Method xxx not found on object."
 
 The second type of error there isn't much you can do to get more information, however. You'll find an error that looks like "Transform "xxx" completed with failures." And something in `stdout` about clicking on `HERE` to get more information. Sadly, only the requester can do that. If that happens just reply with "HELP USER" and that will be a signal. Note that you might get an error as mentioned above and this - in which case try to solve the error before getting the user involved. A common case here is you request some data that should be in the datafiles, but is not.

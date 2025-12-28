@@ -21,7 +21,7 @@ Provide concise, correct func_adl query patterns for ServiceX on ATLAS xAOD, wit
 4. Create a final top-level `Select` that returns a single dictionary of output columns.
    - Convert units to standard LHC units (GeV, meters, etc.).
    - Never return a nested dictionary.
-5. Use `deliver` once with `NFiles=1` and appropriate dataset source.
+5. Use `deliver` once with `NFiles=1` by default and appropriate dataset source(s).
 6. Make sure that the layout of the data that will be returned is remembered - downstream tasks that want to work with the data will need to understand it.
 
 ## Core Rules
@@ -31,14 +31,14 @@ Provide concise, correct func_adl query patterns for ServiceX on ATLAS xAOD, wit
 - Use a single final `Select` that returns a dictionary of outputs.
 - Do not use `awkward` functions inside ServiceX queries.
 - Use `dataset.Rucio` for rucio DIDs and `dataset.FileList` for URL lists.
-- Always set `NFiles=1` in `deliver` and explain why if asked otherwise.
+- Always set `NFiles=1` in `deliver` by default.
 - If a transform fails and logs are required, respond with `HELP USER`.
 - Ensure `func_adl_servicex_xaodr25` is listed as a dependency in the active project and installed in the current virtual environment before running or generating code that uses it.
 
 ## References
 
 - Load `references/servicex-hints.md` for overall ServiceX query patterns, best practices, and error handling, and template code.
-- Load only the relevant xAOD datamodel topic file(s) to keep context small. Naming convention: `references/datamodel-xaod-*.md`.
+- Load only the relevant xAOD data model topic file(s) to keep context small. Naming convention: `references/datamodel-xaod-*.md`.
 - xAOD topics:
   - `references/datamodel-xaod-units.md` (standard ATLAS units (energy, etc))
   - `references/datamodel-xaod-objects.md` (jets, electrons, muons)
