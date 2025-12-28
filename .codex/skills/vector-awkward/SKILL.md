@@ -1,6 +1,6 @@
 ---
 name: vector-awkward
-description: Use when working in Python with scikit-hep vector and Awkward Array to build vector records, register behaviors, compute deltaR or invariant masses, combine or boost vectors, or access vector properties from ak.zip records of type (Momentum3D/Momentum4D/Vector4D).
+description: Use when working in Python with scikit-hep vector and Awkward Array to build vector records, register behaviors, compute deltaR or invariant masses, combine or boost vectors, or access vector properties from ak.zip records of type (Momentum3D/Momentum4D/Vector4D). Vector is only useful if you are also using Awkward.
 ---
 
 # Vector Awkward
