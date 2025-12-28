@@ -12,6 +12,7 @@ Use this skill to build and manipulate hist.Hist objects, choose axis/storage ty
 ## Quick start
 
 - Create histograms with `Hist.new` plus axis builders (`Reg`, `Var`, `StrCat`) and finish with exactly one storage (`Int64` or `Weight`).
+- Make sure axis labels contain a short variable name and units. Histogram titles should contains a slightly longer concise description of what data went into the plot.
 - Fill with `.fill(...)` using axis names; note that `.fill` returns `None`.
 - Slice or project with UHI indexing (e.g., `h.project("x")` or `h[{"x": 5j}]`).
 - Plot with `hist.plot(...)` or `mplhep.hist2dplot(...)`; use `plt.style.use(hep.style.ATLAS)` for HEP-style plots.
@@ -44,3 +45,4 @@ Use this skill to build and manipulate hist.Hist objects, choose axis/storage ty
 
 - Use `references/hist-hints.md` for concrete code snippets and common patterns.
 - Use `references/hist-advanced.md` for UHI indexing, plotting gotchas, and label/LaTeX guidance.
+- Use `references/lhc-hist-ranges.md` for starting suggestions on histogram axis ranges and binning.
