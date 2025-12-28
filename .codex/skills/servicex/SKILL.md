@@ -38,7 +38,7 @@ Provide concise, correct func_adl query patterns for ServiceX on ATLAS xAOD, wit
 ## References
 
 - Load `references/servicex-hints.md` for overall ServiceX query patterns, best practices, and error handling, and template code.
-- Load only the relevant xAOD datamodel topic file(s) to keep context small. Naming convention: `references/datamodel-xaod-*.md`.
+- Load only the relevant xAOD data model topic file(s) to keep context small. Naming convention: `references/datamodel-xaod-*.md`.
 - xAOD topics:
   - `references/datamodel-xaod-units.md` (standard ATLAS units (energy, etc))
   - `references/datamodel-xaod-objects.md` (jets, electrons, muons)
